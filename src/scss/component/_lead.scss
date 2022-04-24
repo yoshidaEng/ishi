@@ -7,10 +7,7 @@
 .lead {
     width: 100%;
     background: url(../img/bg.jpg) center center / cover no-repeat;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 20px;
 }
 
 .lead__inner {
@@ -22,16 +19,16 @@
 .lead__title-box {
     font-size: 28px;
     text-align: center;
-    > span {
-        display: block;
-        line-height: 1.5;
-        letter-spacing: 0.6em;
+    span {
+        display: inline-block;
+        // line-height: 1.5;
+        letter-spacing: 0.3em;
     }
 }
 
 .lead__text {
     font-size: 16px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     text-align: left;
 }
 
@@ -51,36 +48,37 @@
 
 @include m.medium {
     .lead {
-        padding-right: 0;
-        padding-left: 0;
+        padding: 149px 20px 76px;
     }
 
     .lead__inner {
-        padding-top: 149px;
-        padding-bottom: 54px;
+        max-width: 900px;
         writing-mode: vertical-rl;
         text-orientation: upright;
-        // width: 100%;
         display: grid;
-        grid-template-columns: repeat(5 1fr);
+        grid-template-rows: repeat(5,1fr);
         margin-right: auto;
         margin-left: auto;
         > p + p {
             margin-top: 0;
-            margin-right: 60px;
-
+            margin-right: clamp(47px, 6vw, 118px);
         }
     }
 
     .lead__title-box {
         text-align: start;
-        .-m {
-            margin-top: -3em;
+        align-self: end;
+        span {
+            display: block;
+        }
+        span:first-of-type {
+            margin-top: -2.6em;
         }
     }
 
     .lead__text {
         text-align: start;
+        line-height: 2.5;
         align-items: flex-start;
     }
 
