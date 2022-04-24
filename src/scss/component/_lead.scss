@@ -48,7 +48,7 @@
 
 @include m.medium {
     .lead {
-        padding: 149px 20px 76px;
+        padding: 149px 40px 76px;
     }
 
     .lead__inner {
@@ -56,12 +56,13 @@
         writing-mode: vertical-rl;
         text-orientation: upright;
         display: grid;
+        align-items: center;
         grid-template-rows: repeat(5,1fr);
         margin-right: auto;
         margin-left: auto;
+        gap: clamp(30px, 4vw, 42px);
         > p + p {
             margin-top: 0;
-            margin-right: clamp(47px, 6vw, 118px);
         }
     }
 
@@ -78,11 +79,17 @@
 
     .lead__text {
         text-align: start;
-        line-height: 2.5;
+        line-height: 2;
         align-items: flex-start;
     }
+}
 
-    .lead__end {
-        text-align: end;
+@include m.large {
+    .lead__inner {
+        gap: 100px;
+    }
+
+    .lead__text {
+        line-height: 2.5;
     }
 }
