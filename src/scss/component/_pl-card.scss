@@ -1,0 +1,26 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* pl-card
+------------------------------------------------------ */
+.pl-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.pl-card__title {
+    font-size: 20px;
+    line-height: 1.6;
+    padding-top: 24px;
+    font-weight: 500;
+}
+
+.pl-card__thumb {
+    order: -1;
+}
+
+.pl-card__text {
+    padding-top: 28px;
+    line-height: 2;
+}
