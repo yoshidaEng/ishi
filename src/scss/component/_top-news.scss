@@ -1,0 +1,39 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* top-news
+------------------------------------------------------ */
+.top-news {
+    & + .access {
+        margin-top: 60px;
+    }
+}
+
+.top-news__list {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+}
+
+.top-news__info {
+    padding: 15px;
+    display: flex;
+    background-color: v.$c_gray7;
+}
+.top-news__thumb {
+    margin-right: 30px;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+.top-news__body {
+    flex: 1;
+}
+
+@include m.medium {
+    .top-news__list {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: clamp(22px, 2.9vw, 56px);
+    }
+}
