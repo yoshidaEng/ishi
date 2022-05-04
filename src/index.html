@@ -12,8 +12,10 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://kit.fontawesome.com/588aa6d2ca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bandle.css">
     <script src="js/script.js" defer></script>
 </head>
@@ -60,7 +62,7 @@
             </nav>
 
             <!--btn-->
-            <button class="reserve-btn" id="reserve-btn" aria-label="モーダルウィンドウを開く" aria-controls="modal">宿泊予約</button>
+            <button class="reserve-btn" id="reserve-btn" data-micromodal-trigger="modal-1">宿泊予約</button>
 
         </div><!-- /.header__inner -->
     </header>
@@ -89,68 +91,62 @@
         <!--./swiper-->
 
         <!-- modal -->
-        <div class="modal" id="modal" aria-modal="true" role="dialog" tabindex="-1" aria-labelledby="modal__title"
-            aria-hidden="true">
-            <div class="modal__dialog">
-                <div class="modal__content">
-                    <div class="modal__header">
-                        <h2 class="modal__title" id="modal__title">宿泊予約</h2>
-                        <button class="modal__close" id="modal__close" aria-label="モーダルウィンドウを閉じる" aria-expanded="true">
-                            <span class="modal__line" aria-hidden="true"></span>
-                        </button>
+        <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <header class="modal__header">
+                        <h2 class="modal__title" id="modal-1-title">
+                            宿泊予約
+                        </h2>
+                        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                    </header>
+                    <div class="modal__content" id="modal-1-content">
+                        <form action="" method="post" class="form">
+                            <!-- contact -->
+                            <div class="contact">
+                                <label for="name" class="input-label">お名前</label>
+                                <div class="input-field">
+                                    <input type="text" id="name" name="name" placeholder=" 例：石井正悟" required>
+                                </div><!-- /.input-field -->
+                            </div>
+                            <!-- contact -->
+                            <div class="contact">
+                                <label for="email" class="input-label">メールアドレス</label>
+                                <div class="input-field">
+                                    <input type="text" id="email" name="email" placeholder=" 例：Example@example.com"
+                                        required>
+                                </div><!-- /.input-field -->
+                            </div><!-- /.contact -->
+                            <!-- contact -->
+                            <div class="contact">
+                                <label for="contact_type" class="input-label">ご希望プラン（空いているプランのみ表示されます）</label>
+                                <div class="input-field">
+                                    <div class="select-wrap">
+                                        <select name="contact_type" id="contact_type" required>
+                                            <option value="" disabled selected>プランを選択してください</option>
+                                            <option value="懐石プラン">【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+                                            <option value="特別宿泊プラン">平日に優雅に楽しむ、特別宿泊プラン</option>
+                                            <option value="ファミリープラン">絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+                                        </select>
+                                    </div><!-- /.select-wrap -->
+                                </div><!-- /.input-field -->
+                            </div><!-- /.contact -->
+                            <!-- contact -->
+                            <div class="contact">
+                                <label for="calendar" class="input-label">日時選択</label>
+                                <div class="input-field">
+                                    <input type="text" id="calendar" class="flatpickr-input" name="reservation"
+                                        placeholder="日時を選択してください" readonly required>
+                                </div><!-- /.input-field -->
+                            </div><!-- /.contact -->
+                            <div class="form__btn">
+                                <button class="btn btn--action">送信する</button>
+                            </div><!-- /.form__btn -->
+                        </form>
                     </div>
-                    <!-- ./modal__header -->
-
-                    <!-- form -->
-                    <form action="">
-                        <!-- contact -->
-                        <div class="contact">
-                            <label for="name" class="input-label">お名前</label>
-                            <div class="input-field">
-                                <input type="text" id="name" name="name" placeholder="例:石井正直" required>
-                            </div><!-- /.input-field -->
-                        </div>
-                        <!-- ./contact -->
-
-                        <!-- contact -->
-                        <div class="contact">
-                            <label for="email" class="input-label">メールアドレス</label>
-                            <div class="input-field">
-                                <input type="text" id="email" name="email" placeholder="例:Example@example.com" required>
-                            </div><!-- /.input-field -->
-                        </div><!-- /.contact -->
-
-                        <!-- contact -->
-                        <div class="contact">
-                            <label for="contact_type" class="input-label">ご希望プラン(空いているプランのみ表示されます)</label>
-                            <div class="input-field">
-                                <div class="select-wrap">
-                                    <select name="contact_type" id="contact_type" required>
-                                        <option value="" disabled selected>プランを選択して下さい</option>
-                                        <option value="贅沢美味懐石プランについて">【期間限定】海辺の四季旬菜、贅沢美味懐石プラン</option>
-                                        <option value="特別宿泊プランについて">平日に優雅に楽しむ、特別宿泊プラン</option>
-                                        <option value="ファミリープランについて">絶景貸切露天と個室会席を満喫できるファミリープラン</option>
-                                    </select>
-                                </div><!-- /.select-wrap -->
-                            </div><!-- /.input-field -->
-                        </div><!-- /.contact -->
-
-                        <div class="contact">
-                            <label for="calendar" class="input-label">日時選択</label>
-                            <div class="input-field">
-                                <input type="text" id="calendar" name="reservation" readonly class="flatpickr-input"
-                                    placeholder="日時を選択して下さい" required>
-                            </div><!-- /.input-field -->
-                        </div><!-- /.contact -->
-
-                        <div class="form__btn">
-                            <button id="submit" class="btn btn--action">送信する</button>
-                        </div>
-                    </form>
-                </div><!-- /.modal__content -->
-            </div><!-- /.modal__dialog -->
-        </div><!-- /.modal -->
-
+                </div>
+            </div>
+        </div>
         <!--lead-->
         <div class="lead">
             <div class="lead__inner">
@@ -190,10 +186,11 @@
                 </div>
                 <!--./recommend__item-->
                 <div class="recommend__item">
-                    <div class="recommend__inner">
+                    <div class="recommend__inner _reverse">
                         <div class="recommend__body">
                             <h2 class="recommend__lead">出迎えるのは<br>極上の温海料理</h2>
-                            <p class="recommend__text">最も旬の食材を愉しむ、最高の贅沢を最高級A5ランクの米沢牛と共に頂く。あなたの人生史に残る「極上の感動」をお約束します。</p>
+                            <p class="recommend__text">最も旬の食材を愉しむ、最高の贅沢を最高級A5ランクの米沢牛と共に頂く。あなたの人生史に残る「極上の感動」をお約束します。
+                            </p>
                             <div class="recommend__btn">
                                 <a href="" class="btn btn--action">料理について</a>
                             </div><!-- /.recommend__btn -->
@@ -270,14 +267,20 @@
                 <header class="heading-lv2 _icon">
                     <h2 class="heading-lv2__title">お知らせ</h2>
                 </header>
-                <div class="category-list top-news__category">
-                    <a href="" class="category-list__link">営業情報</a>
-                    <a href="" class="category-list__link">その他</a>
-                </div><!-- /.category-list-->
-                <ul class="top-news__list">
-                    <li class="top-news__item">
-                        <article class="top-news__info">
-                            <figure class="top-news__thumb">
+                <div class="top-news__content">
+                    <ul class="top-news__category" role="tablist">
+                        <li>
+                            <a href="#nav-tab_biz" role="tab" aria-controls="nav-tab_biz" aria-expanded="true"
+                                aria-selected="true">営業情報</a>
+                        </li>
+                        <li>
+                            <a href="#nav-tab_misc" ole="tab" aria-controls="nav-tab_misc" aria-expanded="false"
+                                aria-selected="false">その他</a>
+                        </li>
+                    </ul>
+                    <div id="nav-tab_biz" class="top-news__box" role="tabpanel" aria-hidden="false">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-1@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
@@ -285,10 +288,8 @@
                                 <p>年末最後の営業日は27日になります。</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                    </li>
-                    <li class="top-news__item">
-                        <article class="top-news__info">
-                            <figure class="top-news__thumb">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-2@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
@@ -296,10 +297,8 @@
                                 <p>年末最後の営業日のお知らせ</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                    </li>
-                    <li class="top-news__item">
-                        <article class="top-news__info">
-                            <figure class="top-news__thumb">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-2@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
@@ -307,10 +306,8 @@
                                 <p>12.21は臨時休業とさせていただきますので、よろしくお願いします。</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                    </li>
-                    <li class="top-news__item">
-                        <article class="top-news__info">
-                            <figure class="top-news__thumb">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-1@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
@@ -318,21 +315,18 @@
                                 <p>年末最後の営業日のお知らせ</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                    </li>
-                    <li class="top-news__item">
-                        <article class="top-news__info">
-                            <figure class="top-news__thumb">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-1@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
-                                <time>2020.12.01</time>
-                                <p>和室の改装を行いますため、12.10はお休みさせていただきます。</p>
+                                <time>2020.12.03</time>
+                                <p>和室の改装を行いますため、12.10はお休み
+                                    させていただきます。</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                    </li>
-                    <li class="top-news__item">
-                        <article class="top-news__info">
-                            <figure class="top-news__thumb">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-2@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
@@ -340,8 +334,66 @@
                                 <p>年末最後の営業日のお知らせ</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                    </li>
-                </ul><!-- /.top-news -->
+                    </div>
+                    <!-- nav-tab_box -->
+                    <div id="nav-tab_misc" class="top-news__box" role="tabpanel" aria-hidden="true">
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
+                                <img src="img/news-1@2x.jpg" alt="">
+                            </figure>
+                            <div class="top-news__body">
+                                <time>2020.12.24</time>
+                                <p>その他のお知らせ01</p>
+                            </div><!-- /.top-news__body -->
+                        </article>
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
+                                <img src="img/news-2@2x.jpg" alt="">
+                            </figure>
+                            <div class="top-news__body">
+                                <time>2020.12.21</time>
+                                <p>その他のお知らせ02</p>
+                            </div><!-- /.top-news__body -->
+                        </article>
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
+                                <img src="img/news-2@2x.jpg" alt="">
+                            </figure>
+                            <div class="top-news__body">
+                                <time>2020.12.18</time>
+                                <p>その他のお知らせ03</p>
+                            </div><!-- /.top-news__body -->
+                        </article>
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
+                                <img src="img/news-1@2x.jpg" alt="">
+                            </figure>
+                            <div class="top-news__body">
+                                <time>2020.12.15</time>
+                                <p>その他のお知らせ04</p>
+                            </div><!-- /.top-news__body -->
+                        </article>
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
+                                <img src="img/news-1@2x.jpg" alt="">
+                            </figure>
+                            <div class="top-news__body">
+                                <time>2020.12.12</time>
+                                <p>その他のお知らせ05</p>
+                            </div><!-- /.top-news__body -->
+                        </article>
+                        <article class="top-news__item">
+                            <figure class="top-news__thumb" role="presentation">
+                                <img src="img/news-2@2x.jpg" alt="">
+                            </figure>
+                            <div class="top-news__body">
+                                <time>2020.12.12</time>
+                                <p>その他のお知らせ06</p>
+                            </div><!-- /.top-news__body -->
+                        </article>
+                    </div>
+                </div>
+                <!-- top-news__content -->
             </section>
 
             <!--access-->
@@ -374,10 +426,9 @@
             </section><!-- /.access -->
         </div>
         <!--./container _lg-->
-
         <!--btn-->
         <div class="btn-bottom">
-            <button class="sp-reserve-btn" id="sp-reserve-btn" aria-expanded="false" aria-controls="modal">宿泊予約</button>
+            <button class="sp-reserve-btn" id="sp-reserve-btn" data-micromodal-trigger="modal-1">宿泊予約</button>
         </div><!-- /.btn-bottom -->
     </main>
 
@@ -411,7 +462,13 @@
             <p>Copyright &copy; 石井花壇 All Rights Reserved</p>
         </div><!-- /.footer_copyright -->
     </footer>
-
+    <script>
+        MicroModal.init({
+            disableScroll: true,
+            awaitOpenAnimation: true,
+            awaitCloseAnimation: true
+        });
+    </script>
 </body>
 
 </html>
