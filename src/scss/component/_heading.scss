@@ -1,0 +1,28 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* 見出し
+------------------------------------------------------ */
+
+/*大見出し(h2相当)*/
+.heading-lv2 {
+    text-align: center;
+
+}
+.heading-lv2__title {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+/*アイコン付き*/
+.heading-lv2._icon {
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: url(../img/logo02.svg) center center / contain no-repeat;
+        margin-bottom: 20px;
+    }
+}

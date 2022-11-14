@@ -1,0 +1,106 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* recommend
+------------------------------------------------------ */
+.recommend {
+    padding-top: 90px;
+    padding-bottom: 70px;
+}
+
+.recommend__item + .recommend__item {
+    padding-top: 102px;
+}
+
+.recommend__inner {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.recommend__body {
+    margin-top: 30px;
+}
+.recommend__lead {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.recommend__text {
+    margin-top: 30px;
+    line-height: 2;
+}
+
+.recommend__btn {
+    margin-top: 30px;
+    justify-self: center;
+}
+
+@include m.medium {
+    .recommend__text {
+        margin-top: 45px;
+    }
+    .recommend__btn {
+        margin-top: 45px;
+        justify-self: start;
+    }
+}
+@include m.large {
+    .recommend {
+        padding-top: 106px;
+        padding-bottom: 78px;
+    }
+
+    .recommend__item + .recommend__item {
+        padding-top: 122px;
+    }
+
+    .recommend__inner {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .recommend__ph {
+        flex-shrink: 0;
+        width: calc((1050/1920)*100%);
+        height: auto;
+    }
+
+    .recommend__body {
+        margin-top: 0;
+        margin-left: calc((137/1920)*100vw);
+    }
+
+    .recommend__text {
+        margin-top: clamp(38px, 3.9vw, 75px);
+    }
+
+    .recommend__btn {
+        margin-top: clamp(38px, 3.9vw, 75px);
+    }
+
+    /*反転*/
+    .recommend__inner._reverse {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .recommend__inner._reverse {
+        .recommend__ph {
+            margin-right: 0;
+
+        }
+
+        .recommend__body {
+            margin-right: calc((174/1920)*100vw);
+            margin-left: 0;
+        }
+    }
+
+}
+
+@include m.x-large {
+    .recommend__lead {
+        font-size: 36px;
+    }
+}

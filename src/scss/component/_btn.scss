@@ -1,0 +1,125 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* ボタン
+------------------------------------------------------ */
+
+/*button共通*/
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    transition: all .3s;
+    border: 1px solid v.$c_gray3;
+    background: v.$c_white;
+    color: v.$c_black;
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        border: 1px solid v.$c_black;
+        opacity: 0.7;
+    }
+}
+
+/*ナビボタン*/
+.navbtn {
+    width: auto;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+/*開く*/
+.open .navbtn {
+    z-index: v.$zi_navbtn;
+}
+
+/*SP予約ボタン*/
+.sp-reserve-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 22px;
+    transition: all .3s;
+    border: 0;
+    background: v.$c_yellow2;
+    color: v.$c_white;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        background: v.$c_yellow1;
+    }
+
+    &::before {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        background: url(../img/calender.svg) center center / contain no-repeat;
+        content:"";
+        vertical-align: middle;
+    }
+
+    @include m.medium {
+        & {
+            display: none;
+        }
+    }
+}
+
+/*画面下固定&最前面表示*/
+.btn-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: v.$zi_bt-btn;
+}
+
+/*For PC 予約ボタン*/
+.reserve-btn {
+    display: none;
+    width: 170px;
+    margin-left: auto;
+    padding: 15px;
+    transition: all .3s;
+    border: 0;
+    background: v.$c_yellow2;
+    color: v.$c_white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        border-color: transparent;
+        background: v.$c_yellow1;
+
+    }
+    &::before {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        background: url(../img/calender.svg) center center / contain no-repeat;
+        content:"";
+        vertical-align: middle;
+    }
+    @include m.medium {
+        & {
+            display: inline-block;
+        }
+    }
+}
+
+/*アクション系*/
+.btn--action {
+    width: 200px;
+    border: 1px solid v.$c_gray3;
+}

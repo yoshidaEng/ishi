@@ -1,0 +1,28 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+
+/* フッターメニュー
+------------------------------------------------------ */
+.fmenu {
+    list-style: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    text-align: start;
+    writing-mode: vertical-lr;
+}
+
+.fmenu__item {
+    margin-right: 34px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.fmenu__link {
+    display: block;
+    color: v.$c_black;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1em;
+    text-decoration: none;
+}

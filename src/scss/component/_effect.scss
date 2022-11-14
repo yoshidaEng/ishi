@@ -1,0 +1,52 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* effect
+------------------------------------------------------ */
+.effect {
+    margin-top: 126px;
+    padding-top: 65px;
+    padding-bottom: 44px;
+    border-top: 1px solid v.$c_gray6;
+    border-bottom: 1px solid v.$c_gray6;
+
+    dt {
+        width: 25%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        border-top: 1px solid v.$c_gray6;
+        border-bottom: 1px solid v.$c_gray6;
+    }
+    dd {
+        width: 75%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        border-top: 1px solid v.$c_gray6;
+        border-bottom: 1px solid v.$c_gray6;
+
+    }
+}
+
+.effect__title {
+    font-size: 26px;
+    text-align: center;
+}
+
+.effect__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 880px;
+    margin-top: 51px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 15px;
+}
+
+@include m.medium {
+    .effect {
+        margin-top: 156px;
+        padding-top: 95px;
+        padding-bottom: 74px;
+    }
+}

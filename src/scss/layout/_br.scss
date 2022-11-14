@@ -1,0 +1,34 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+/* 改行
+------------------------------------------------------ */
+.br-small {
+    display: block;
+}
+
+
+.br-medium {
+    display: none;
+}
+
+.br-large {
+    display: none;
+}
+@include m.small {
+    .br-small {
+        display: none;
+    }
+}
+
+@include m.medium {
+    .br-medium {
+    display: block;
+    }
+}
+
+@include m.large {
+    .br-large {
+        display: block;
+    }
+}

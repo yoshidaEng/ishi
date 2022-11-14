@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
-    <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。
-    伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+    <meta name="title" content="石井花壇 | 温海温泉旅館【公式サイト】">
+    <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -16,57 +16,70 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://kit.fontawesome.com/588aa6d2ca.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <link rel="stylesheet" href="css/bandle.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <!--header-->
-    <header class="header">
+    <header class="header js-header">
         <div class="header__inner">
             <h1 class="header__logo">
-                <a href="#"><img src="img/top-header-logo.svg" alt="石井花壇 | 温海温泉旅館【公式サイト】" width="200" height="40"></a>
+                <a href="index.html" class="js-header__logo">
+                    <img src="img/top-header-logo.svg" alt="石井花壇 | 温海温泉旅館【公式サイト】" width="200" height="40">
+                </a>
             </h1>
 
-            <!-- for SP -->
-            <!--hamburger-->
-            <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
-                <span class="hamburger__line hamburger--white" aria-hidden="true"></span>
+            <!-- navbtn -->
+            <button class="navbtn" aria-controls="spmenu" aria-expanded="false">
+                <!--hamburger-->
+                <div id="hamburger" class="hamburger" aria-label="メニューを開く">
+                    <span class="hamburger__line js-hamburger__line hamburger--white"></span>
+                </div>
+                <i class="fa-solid fa-xmark" aria-label="メニューを閉じる"></i>
             </button>
 
             <!--spmenu-->
-            <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー" aria-hidden="true">
+            <nav id=" spmenu" class="spmenu" aria-label="スマホ用メニュー" aria-hidden="true">
                 <div class="spmenu__inner">
+                    <p class="spmenu__logo">
+                        <a href="index.html"><img src="img/sub-header-logo.svg" alt="石井花壇 | 温海温泉旅館【公式サイト】" width="200"
+                                height="40"></a>
+                    </p>
                     <ul class="spmenu__list">
-                        <li class="spmenu__item"><a href="#" class="spmenu__link">お部屋</a></li>
-                        <li class="spmenu__item"><a href="#" class="spmenu__link">お料理</a></li>
-                        <li class="spmenu__item"><a href="#" class="spmenu__link">温泉</a></li>
+                        <li class="spmenu__item"><a href="room/index.html" class="spmenu__link">お部屋</a></li>
+                        <li class="spmenu__item"><a href="menu/index.html" class="spmenu__link">お料理</a></li>
+                        <li class="spmenu__item"><a href="onsen/index.html" class="spmenu__link">温泉</a></li>
                     </ul>
                 </div>
                 <!--./spmenu__inner-->
             </nav>
 
             <!--gnav-->
-            <nav id="gnav" class="gnav gnav--white" aria-label="メインメニュー">
+            <nav id="gnav" class="gnav js-gnav gnav--white" aria-label="メインメニュー">
                 <ul class="gnav__list">
                     <li class="gnav__item">
-                        <a href="" class="gnav__link">お部屋</a>
+                        <a href="room/index.html" class="gnav__link">お部屋</a>
                     </li>
                     <li class="gnav__item">
-                        <a href="" class="gnav__link">お料理</a>
+                        <a href="menu/index.html" class="gnav__link">お料理</a>
                     </li>
                     <li class="gnav__item">
-                        <a href="" class="gnav__link">温泉</a>
+                        <a href="onsen/index.html" class="gnav__link">温泉</a>
                     </li>
                 </ul>
             </nav>
 
-            <!--btn-->
-            <button class="reserve-btn" id="reserve-btn" data-micromodal-trigger="modal-1">宿泊予約</button>
+            <!--reserve-btn-->
+            <button class="reserve-btn" id="reserve-btn" data-micromodal-trigger="modal-1" aria-label="モーダルを開く"
+                aria-controls="modal">宿泊予約</button>
 
         </div><!-- /.header__inner -->
     </header>
     <main class="main-contents">
+
         <!--swiper-->
         <div class="swiper main-visual">
             <div class="swiper-wrapper">
@@ -82,7 +95,7 @@
             </div>
             <!--./swipper-warpper-->
             <div class="main-visual__inner">
-                <div class="main-visual__text">
+                <div class="main-visual__text" data-aos="fade-left">
                     <p>頑張る人の</p>
                     <p>頑張らない時間</p>
                 </div><!-- /.main-visual__text -->
@@ -98,7 +111,7 @@
                         <h2 class="modal__title" id="modal-1-title">
                             宿泊予約
                         </h2>
-                        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                        <button class="modal__close" aria-label="モーダルを閉じる" data-micromodal-close></button>
                     </header>
                     <div class="modal__content" id="modal-1-content">
                         <form action="" method="post" class="form">
@@ -144,12 +157,17 @@
                             </div><!-- /.form__btn -->
                         </form>
                     </div>
+                    <!-- modal__content -->
                 </div>
+                <!-- modal__container -->
             </div>
+            <!-- modal__overlay -->
         </div>
+        <!-- modal -->
+
         <!--lead-->
         <div class="lead">
-            <div class="lead__inner">
+            <div class="lead__inner" data-aos="fade-up">
                 <p class="lead__title-box">
                     <span>温海温泉の</span>
                     <span>美しさに癒やされて</span>
@@ -165,20 +183,21 @@
         </div><!-- /.lead -->
 
         <div class="container _wide">
+
             <!--recommend-->
             <section class="recommend">
                 <div class="recommend__item">
                     <div class="recommend__inner">
-                        <div class="recommend__body">
+                        <div class="recommend__body" data-aos="fade-up">
                             <h2 class="recommend__lead">喧騒から離れた空間<br>心落ち着く至極のひととき</h2>
                             <p class="recommend__text">
-                                まるで時が止まったかのような、圧倒的な静寂のなかで、ひたすらにゆったりと…。<br>最高級の「何もしない時間」をお過ごしください。
+                                まるで時が止まったかのような、圧倒的な静寂のなかで、<br class="br-large">ひたすらにゆったりと…。<br>最高級の「何もしない時間」をお過ごしください。
                             </p>
-                            <div class="recommend__btn">
-                                <a href="" class="btn btn--action">お部屋について</a>
+                            <div class="recommend__btn" data-aos="fade-up">
+                                <a href="room/index.html" class="btn btn--action">お部屋について</a>
                             </div><!-- /.recommend__btn -->
                         </div><!-- /.recommend__body-->
-                        <figure class="recommend__ph">
+                        <figure class="recommend__ph" data-aos="fade-up">
                             <img src="img/oheya-top@2x.jpg" alt="窓辺から美しい庭園が見渡せる部屋の写真">
                         </figure><!-- /.recommend__ph -->
                     </div>
@@ -187,15 +206,17 @@
                 <!--./recommend__item-->
                 <div class="recommend__item">
                     <div class="recommend__inner _reverse">
-                        <div class="recommend__body">
+                        <div class="recommend__body" data-aos="fade-up">
                             <h2 class="recommend__lead">出迎えるのは<br>極上の温海料理</h2>
-                            <p class="recommend__text">最も旬の食材を愉しむ、最高の贅沢を最高級A5ランクの米沢牛と共に頂く。あなたの人生史に残る「極上の感動」をお約束します。
+                            <p class="recommend__text">
+                                最も旬の食材を愉しむ、最高の贅沢を<br class="br-large">最高級A5ランクの米沢牛と共に頂く。<br>あなたの人生史に残る「極上の感動」を<br
+                                    class="br-large">お約束します。
                             </p>
-                            <div class="recommend__btn">
-                                <a href="" class="btn btn--action">料理について</a>
+                            <div class="recommend__btn" data-aos="fade-up">
+                                <a href="menu/index.html" class="btn btn--action">料理について</a>
                             </div><!-- /.recommend__btn -->
                         </div><!-- /.recommend__body-->
-                        <figure class="recommend__ph">
+                        <figure class="recommend__ph" data-aos="fade-up">
                             <img src="img/menu-top@2x.jpg" alt="最高級A5ランク米沢牛が皿の上に乗っている写真">
                         </figure><!-- /.recommend__ph -->
                     </div>
@@ -204,15 +225,16 @@
                 <!--./recommend__item-->
                 <div class="recommend__item">
                     <div class="recommend__inner">
-                        <div class="recommend__body">
+                        <div class="recommend__body" data-aos="fade-up">
                             <h2 class="recommend__lead">疲れ切った身体にやすらぎを<br>温海の源泉に癒やされて</h2>
-                            <p class="recommend__text">古くは弘法大師の病をも治療したと言われる熱海の泉質。現代人の疲弊しきった身体を修復する最高級の湯治場としてご活用ください。
+                            <p class="recommend__text">
+                                古くは弘法大師の病をも治療したと言われる熱海の泉質。<br>現代人の疲弊しきった身体を修復する最高級の湯治場として<br class="br-large">ご活用ください。
                             </p>
-                            <div class="recommend__btn">
-                                <a href="" class="btn btn--action">温泉について</a>
+                            <div class="recommend__btn" data-aos="fade-up">
+                                <a href="onsen/index.html" class="btn btn--action">温泉について</a>
                             </div><!-- /.recommend__btn -->
                         </div><!-- /.recommend__body-->
-                        <figure class="recommend__ph">
+                        <figure class="recommend__ph" data-aos="fade-up">
                             <img src="img/onsen-top@2x.jpg" alt="湧き出た温泉が湯船に流れ出る様子が写っている写真">
                         </figure><!-- /.recommend__pi -->
                     </div>
@@ -223,13 +245,13 @@
 
             <!--plan-->
             <section class="plan">
-                <header class="heading-lv2 _icon">
+                <header class="heading-lv2 _icon" data-aos="fade-up">
                     <h2 class="heading-lv2__title">おすすめご宿泊プラン</h2>
                 </header>
-                <ul class="plan__list">
+                <div class="plan__list">
                     <a class="plan__link" href="#">
-                        <section class="pl-card plan__item">
-                            <h3 class="pl-card__title heading-lv3">朝食付きプラン、日本近海で取れたのどぐろを朝食として…</h3>
+                        <section class="pl-card plan__item" data-aos="fade-up">
+                            <h3 class="pl-card__title">朝食付きプラン、日本近海で取れたのどぐろを朝食として…</h3>
                             <figure class="pl-card__thumb">
                                 <img src="img/recommended01@2x.jpg" alt="美味しそうな焼けたアカムツがお皿に盛り付けてある写真">
                             </figure>
@@ -239,8 +261,8 @@
                         </section>
                     </a>
                     <a class="plan__link" href="#">
-                        <section class="pl-card plan__item">
-                            <h3 class="pl-card__title heading-lv3">【期間限定】熱海蟹をたっぷりと愉しむプラン。</h3>
+                        <section class="pl-card plan__item" data-aos="fade-up">
+                            <h3 class="pl-card__title">【期間限定】熱海蟹をたっぷりと愉しむプラン。</h3>
                             <figure class="pl-card__thumb">
                                 <img src="img/recommended02@2x.jpg" alt="味噌汁の中にカニが入っている写真">
                             </figure>
@@ -250,8 +272,8 @@
                         </section>
                     </a>
                     <a class="plan__link" href="#">
-                        <section class="pl-card plan__item">
-                            <h3 class="pl-card__title heading-lv3">【平日限定】贅沢美味懐石プラン。海辺の四季旬彩プラン。</h3>
+                        <section class="pl-card plan__item" data-aos="fade-up">
+                            <h3 class="pl-card__title">【平日限定】贅沢美味懐石プラン。海辺の四季旬彩プラン。</h3>
                             <figure class="pl-card__thumb">
                                 <img src="img/recommended03@2x.jpg" alt="お刺身が綺麗に盛り付けてある写真">
                             </figure>
@@ -260,15 +282,16 @@
                             </p>
                         </section>
                     </a>
-                </ul>
+                </div>
             </section>
+
             <!--top-news-->
             <section class="top-news">
-                <header class="heading-lv2 _icon">
+                <header class="heading-lv2 _icon" data-aos="fade-up">
                     <h2 class="heading-lv2__title">お知らせ</h2>
                 </header>
                 <div class="top-news__content">
-                    <ul class="top-news__category" role="tablist">
+                    <ul class="top-news__category" role="tablist" data-aos="fade-up">
                         <li>
                             <a href="#nav-tab_biz" role="tab" aria-controls="nav-tab_biz" aria-expanded="true"
                                 aria-selected="true">営業情報</a>
@@ -279,7 +302,7 @@
                         </li>
                     </ul>
                     <div id="nav-tab_biz" class="top-news__box" role="tabpanel" aria-hidden="false">
-                        <article class="top-news__item">
+                        <article class="top-news__item" data-aos="fade-up">
                             <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-1@2x.jpg" alt="">
                             </figure>
@@ -288,7 +311,7 @@
                                 <p>年末最後の営業日は27日になります。</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                        <article class="top-news__item">
+                        <article class="top-news__item" data-aos="fade-up">
                             <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-2@2x.jpg" alt="">
                             </figure>
@@ -297,7 +320,7 @@
                                 <p>年末最後の営業日のお知らせ</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                        <article class="top-news__item">
+                        <article class="top-news__item" data-aos="fade-up">
                             <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-2@2x.jpg" alt="">
                             </figure>
@@ -306,7 +329,7 @@
                                 <p>12.21は臨時休業とさせていただきますので、よろしくお願いします。</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                        <article class="top-news__item">
+                        <article class="top-news__item" data-aos="fade-up">
                             <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-1@2x.jpg" alt="">
                             </figure>
@@ -315,17 +338,16 @@
                                 <p>年末最後の営業日のお知らせ</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                        <article class="top-news__item">
+                        <article class="top-news__item" data-aos="fade-up">
                             <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-1@2x.jpg" alt="">
                             </figure>
                             <div class="top-news__body">
-                                <time>2020.12.03</time>
-                                <p>和室の改装を行いますため、12.10はお休み
-                                    させていただきます。</p>
+                                <time>2020.12.01</time>
+                                <p>和室の改装を行いますため、12.10はお休みさせていただきます。</p>
                             </div><!-- /.top-news__body -->
                         </article>
-                        <article class="top-news__item">
+                        <article class="top-news__item" data-aos="fade-up">
                             <figure class="top-news__thumb" role="presentation">
                                 <img src="img/news-2@2x.jpg" alt="">
                             </figure>
@@ -398,14 +420,14 @@
 
             <!--access-->
             <section class="access">
-                <header class="heading-lv2 _icon">
+                <header class="heading-lv2 _icon" data-aos="fade-up">
                     <h2 class="heading-lv2__title">アクセス</h2>
                 </header>
                 <div class="access__info">
-                    <figure class="access__ph">
+                    <figure class="access__ph" data-aos="fade-up">
                         <img src="img/acess@2x.jpg" alt="">
                     </figure>
-                    <div class="access__ad">
+                    <div class="access__ad" data-aos="fade-up">
                         <dl>
                             <dt>住所</dt>
                             <dd>〒000-0000 山形県鶴岡市xxxxxxxxxx</dd>
@@ -417,19 +439,25 @@
                         <p>＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、ご連絡ください。</p>
                     </div><!-- /.access__meta -->
                 </div><!-- /.access__inner -->
-                <div class="map access__map">
+
+                <!-- map  -->
+                <div class="map access__map" data-aos="fade-up">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49867.71955771063!2d139.5635409747366!3d38.6320351306326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1650981359735!5m2!1sja!2sjp"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div><!-- /.g-map -->
+
             </section><!-- /.access -->
         </div>
         <!--./container _lg-->
+
         <!--btn-->
         <div class="btn-bottom">
-            <button class="sp-reserve-btn" id="sp-reserve-btn" data-micromodal-trigger="modal-1">宿泊予約</button>
+            <button class="sp-reserve-btn" id="sp-reserve-btn" data-micromodal-trigger="modal-1" aria-label="モーダルを開く"
+                aria-controls="modal">宿泊予約</button>
         </div><!-- /.btn-bottom -->
+
     </main>
 
     <!--footer-->
@@ -438,13 +466,13 @@
         <!--fmenu-->
         <ul class="fmenu">
             <li class="fmenu__item">
-                <a href="" class="fmenu__link">温泉</a>
+                <a href="./onsen/index.html" class="fmenu__link">温泉</a>
             </li>
             <li class="fmenu__item">
-                <a href="" class="fmenu__link">お料理</a>
+                <a href="./menu/index.html" class="fmenu__link">お料理</a>
             </li>
             <li class="fmenu__item">
-                <a href="" class="fmenu__link">お部屋</a>
+                <a href="./room/index.html" class="fmenu__link">お部屋</a>
             </li>
         </ul><!-- /.fmenu -->
 
@@ -462,11 +490,53 @@
             <p>Copyright &copy; 石井花壇 All Rights Reserved</p>
         </div><!-- /.footer_copyright -->
     </footer>
+
     <script>
-        MicroModal.init({
-            disableScroll: true,
-            awaitOpenAnimation: true,
-            awaitCloseAnimation: true
+        /*Swiper*/
+        $(function () {
+            let mySwiper = new Swiper('.swiper', {
+                loop: true, //最後に達したら先頭に戻る
+                effect: 'fade',
+                autoplay: {
+                    delay: 3000,
+                    //ユーザー側操作でスライドを操作しても自動再生を継続させる
+                    disableOnInteraction: false,
+                },
+                speed: 2000,
+                //マウスでのスライド操作を禁止させる
+                allowTouchMove: false,
+            });
+
+            /*ヘッダー固定*/
+            let topHeight = $('.js-header').offset().top;
+            $(window).on('scroll', function () {
+                $('.js-gnav').removeClass('gnav--white');
+                $('.js-hamburger__line').removeClass('hamburger--white');
+                $('.js-header__logo').children('img').attr('src', 'img/sub-header-logo.svg');
+                let currentPos = $(window).scrollTop();
+                if (currentPos > topHeight) {
+                    $('.js-header').addClass('_fixed');
+                } else {
+                    $('js-header').removeClass('_fixed');
+                }
+            });
+            /*タブ*/
+            function tab() {
+                const $tab = $('[aria-controls^="nav-tab"]');
+                $tab.on('click', function (e) {
+                    const $self = $(e.currentTarget);
+                    const expanded = $self.attr('aria-expanded');
+                    const target = $self.attr('aria-controls');
+                    const $target = $('#' + target);
+                    if (expanded === 'false') {
+                        $tab.attr('aria-expanded', false).attr('aria-selected', false);
+                        $tab.filter('[aria-controls="' + target + '"]').attr('aria-expanded', true).attr('aria-selected', true);
+                        $target.attr('aria-hidden', false).siblings('[id]').attr('aria-hidden', true);
+                    }
+                    return false;
+                });
+            }
+            tab();
         });
     </script>
 </body>

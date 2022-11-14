@@ -1,0 +1,15 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* Section
+------------------------------------------------------ */
+.section {
+    margin-top: 56px;
+}
+
+@include m.medium {
+    .section {
+        margin-top: 76px;
+    }
+}

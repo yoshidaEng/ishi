@@ -4,87 +4,6 @@
 
 /* モーダルウィンドウ
 ------------------------------------------------------ */
-// .modal {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     //flatpikr 99999より低く指定
-//     z-index: 99998;
-//     // display: none;
-//     width: 100%;
-//     padding: 0 20px;
-//     height: 100%;
-//     // display: flex;
-//     // justify-content: center;
-//     // align-items: center;
-// }
-
-// .modal__dialog{
-//     margin-top: 60px;
-//     background-color: v.$c_white;
-//     padding: 20px 60px;
-//     max-width: 550px;
-//     height: 600px;
-//     margin-right: auto;
-//     margin-left: auto;
-//     border: 1px solid v.$c_gray6;
-// }
-
-// .modal__header {
-//     position: relative;
-//     padding: 25px;
-//     border-bottom: 1px solid v.$c_gray6;
-//     text-align: center;
-//     & + form {
-//         margin-top: 32px;
-//     }
-// }
-
-// .modal__title {
-//     font-size: 20px;
-//     font-weight: 500;
-// }
-
-// .modal__close {
-//     position: absolute;
-//     top: 25px;
-//     right: 25px;
-//     width: 18px;
-//     height: 18px;
-//     background-color: transparent;
-// }
-
-// .modal__line {
-//     position: relative;
-//     width: 30px;
-//     height: 2px;
-// }
-
-// .modal__line::before,
-// .modal__line::after {
-//     display: block;
-//     position: absolute;
-//     width: 18px;
-//     height: 2px;
-//     transition: transform 0.3s;
-//     background: v.$c_black;
-//     content: "";
-// }
-
-// .modal__close .modal__line{
-//     background: transparent;
-// }
-// .modal__close .modal__line::before {
-//     transform: rotate(45deg);
-// }
-// .modal__close .modal__line::after {
-//     transform: rotate(-45deg);
-// }
-
-/**************************\
-  Basic Modal Styles
-\**************************/
-
 .modal__overlay {
     display: flex;
     position: fixed;
@@ -95,7 +14,7 @@
     align-items: center;
     justify-content: center;
     background: rgba(0,0,0,0.6);
-    z-index: 99998;
+    z-index: v.$zi_modal;
 }
 
 .modal__close {

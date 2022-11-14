@@ -1,0 +1,58 @@
+//=================================
+// メディアクエリ
+//=================================
+
+@mixin x-small {
+	@media screen and (max-width: 575px) {
+		@content;
+	}
+}
+@mixin small {
+	@media screen and (min-width: 576px),print {
+		@content;
+	}
+}
+@mixin medium {
+	@media screen and (min-width: 768px),print {
+		@content;
+	}
+}
+@mixin large {
+	@media screen and (min-width: 992px),print {
+		@content;
+	}
+}
+@mixin x-large {
+	@media screen and (min-width: 1200px),print {
+		@content;
+	}
+}
+@mixin xx-large {
+	@media screen and (min-width: 1400px),print {
+		@content;
+	}
+}
+
+
+@mixin x-large {
+    @media (min-width: 1200px),print {
+        @content
+    }
+};
+
+
+@mixin xx-large {
+    @media (min-width: 1400px),print {
+        @content
+    }
+};
+
+//=================================
+// 画像置換
+//=================================
+//スコットケラムメソッド
+@mixin replace {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+};

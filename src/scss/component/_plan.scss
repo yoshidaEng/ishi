@@ -1,0 +1,62 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* plan
+------------------------------------------------------ */
+.plan {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: calc(50vw - 50%);
+    padding-left: calc(50vw - 50%);
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    background: url(../img/bg02@2x.jpg);
+}
+
+.plan__list {
+    max-width: 1180px;
+    display: grid;
+    padding: 0 20px;
+    margin-top: 66px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.plan__link {
+    display: block;
+    color: v.$c_black;
+    text-decoration: none;
+    & + .plan__link {
+        padding-top: 60px;
+    }
+}
+
+
+
+@include m.small {
+    .plan__list {
+        gap: 30px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .plan__link {
+        & + .plan__link {
+            padding-top: 0;
+        }
+    }
+}
+
+@include m.medium {
+    .plan {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+@include m.large {
+    .plan__list {
+        grid-template-columns: repeat(3,1fr);
+        gap: 94px;
+    }
+}
+

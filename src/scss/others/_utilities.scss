@@ -1,0 +1,34 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* ユーティリティ
+------------------------------------------------------ */
+/*消去*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+}
+
+/*text-align*/
+.ta-r {
+    text-align: right;
+}
+
+.break {
+    display: inline-block;
+}
+/*マージン*/
+.mt-35 {
+    margin-top: 35px;
+}
+
+

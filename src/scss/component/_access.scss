@@ -1,0 +1,64 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* access
+------------------------------------------------------ */
+.access {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    padding-top: 40px;
+    padding-right: calc(50vw - 50%);
+    padding-bottom: 90px;
+    padding-left: calc(50vw - 50%);
+    background: url(../img/bg@2x.jpg) center center / cover no-repeat;
+}
+
+.access__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 1310px;
+    margin-top: 64px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.access__ad {
+    margin-top: 40px;
+    line-height: 2;
+    dt {
+        font-weight: bold;
+    }
+}
+
+.access__map {
+    margin-top: 60px;
+}
+
+@include m.medium {
+    .access {
+        padding-top: 60px;
+        padding-bottom: 110px;
+    }
+
+    .access__info {
+        flex-direction: row;
+        margin-top: 74px;
+    }
+
+    .access__ph {
+        flex-shrink: 0;
+        width: calc((656/1310)*100%);
+        margin-right: calc((83/1310)*100%);
+    }
+
+    .access__ad {
+        // width: calc((561/1300)*100%);
+        flex-grow: 1;
+        margin-top: 20px;
+    }
+
+    .access__map {
+        margin-top: 70px;
+    }
+}

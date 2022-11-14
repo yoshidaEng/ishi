@@ -1,0 +1,37 @@
+//読み込み
+@use "../abstracts/variables" as v;
+
+/* ページヘッダー
+------------------------------------------------------ */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(148px,42vw ,500px);
+    padding: 0 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+}
+//背景 お部屋
+.page-header._room {
+    background: url(../img/oheya-header@2x.jpg) center / cover no-repeat;
+}
+
+//背景 料理
+.page-header._menu {
+    background: url(../img/menu-header@2x.jpg) center / cover no-repeat;
+}
+
+//背景 温泉
+.page-header._onsen {
+    background: url(../img/onsen-header@2x.jpg) center / cover no-repeat;
+}
+
+.page-header__title {
+    color: v.$c_white;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2;
+}

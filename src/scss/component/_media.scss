@@ -1,0 +1,113 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* メディア
+------------------------------------------------------ */
+.media {
+    display: flex;
+    flex-direction: column-reverse;
+    & + .media {
+        margin-top: 84px;
+    }
+}
+.media__body {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    background: url(../img/bg@2x.jpg) no-repeat;
+}
+
+
+.media__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.media__text {
+    margin-top: 20px;
+    line-height: 2;
+}
+
+.media__attention-list {
+    margin-top: 52px;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+}
+
+@include m.small {
+    .media {
+        display: block;
+        position: relative;
+        padding-top: clamp(90px, 15.6vw, 155px);
+    }
+
+    .media__body {
+        width: 80%;
+        margin-right: 0;
+        margin-left: auto;
+        padding-top: clamp(150px, 26vw, 258px);
+        padding-right: 60px;
+        padding-bottom: 60px;
+        padding-left: 60px;
+    }
+
+    .media__text {
+        margin-top: 52px;
+    }
+
+    .media__ph {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70%;
+        z-index: 1;
+    }
+
+    /*反転*/
+    .media._reverse {
+        .media__body {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        .media__ph {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+@include m.large {
+    .media {
+        padding-top: 60px;
+    }
+
+    .media__body {
+        width: calc((813/1180)*100%);
+        padding-top: 60px;
+        padding-right: 60px;
+        padding-bottom: 120px;
+        padding-left: 235px;
+    }
+
+    .media__ph {
+        width: calc((525/1180)*100%);
+    }
+
+    /*反転*/
+    .media._reverse {
+        .media__body {
+            padding-right: 200px;
+            padding-left: 60px;
+
+        }
+    }
+}
+
+
+
+

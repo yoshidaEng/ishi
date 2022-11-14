@@ -1,0 +1,60 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* フッターレイアウト
+------------------------------------------------------ */
+.footer {
+    margin-top: 120px;
+    padding-top: 64px;
+    background: url(../img/bg3.jpg) center / cover no-repeat;
+    text-align: center;
+}
+
+.footer__logo {
+    margin-top: 96px;
+    a {
+        display: block;
+    }
+    img {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.footer__ad-box {
+    margin-top: 72px;
+    font-style: normal;
+}
+
+.footer__adress {
+    span {
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+
+.footer__tel {
+    line-height: 3;
+    p {
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+.footer_copy {
+    margin-top: 60px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    background: v.$c_black;
+    color: v.$c_white;
+    p {
+        font-size: 12px;
+    }
+}
+
+@include m.medium {
+    .footer {
+        margin-top: 150px;
+    }
+}

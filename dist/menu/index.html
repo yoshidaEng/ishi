@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>石井花壇 | 温海温泉旅館【公式サイト】</title>
+<meta name="title" content="石井花壇 | 温海温泉旅館【公式サイト】">
+<meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer="defer"></script>
+<script src="https://kit.fontawesome.com/588aa6d2ca.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/bandle.css">
+<script src="../js/script.js" defer="defer"></script>
+<script type="application/ld+json">
+{
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "<お料理>",
+                "item": "<ishii-kadan/menu/index.html>"
+            }]
+        }
+</script>
+</head>
+<body>
+<header class="header _fixed">
+<div class="header__inner">
+<p class="header__logo">
+<a href="../index.html"><img src="../img/sub-header-logo.svg" alt="石井花壇 | 温海温泉旅館【公式サイト】" width="200" height="40"></a>
+</p>
+<button class="navbtn" aria-controls="spmenu" aria-expanded="false">
+<div id="hamburger" class="hamburger" aria-label="メニューを開く">
+<span class="hamburger__line js-hamburger__line"></span>
+</div>
+<i class="fa-solid fa-xmark" aria-label="メニューを閉じる"></i>
+</button>
+<nav id=" spmenu" class="spmenu" aria-label="スマホ用メニュー" aria-hidden="true">
+<div class="spmenu__inner">
+<p class="spmenu__logo">
+<a href="../index.html"><img src="../img/sub-header-logo.svg" alt="石井花壇 | 温海温泉旅館【公式サイト】" width="200" height="40"></a>
+</p>
+<ul class="spmenu__list">
+<li class="spmenu__item"><a href="../room/index.html" class="spmenu__link">お部屋</a></li>
+<li class="spmenu__item"><a href="../menu/index.html" class="spmenu__link">お料理</a></li>
+<li class="spmenu__item"><a href="../onsen/index.html" class="spmenu__link">温泉</a></li>
+</ul>
+</div>
+</nav>
+<nav id="gnav" class="gnav" aria-label="メインメニュー">
+<ul class="gnav__list">
+<li class="gnav__item">
+<a href="../room/index.html" class="gnav__link">お部屋</a>
+</li>
+<li class="gnav__item">
+<a href="../menu/index.html" class="gnav__link">お料理</a>
+</li>
+<li class="gnav__item">
+<a href="../onsen/index.html" class="gnav__link">温泉</a>
+</li>
+</ul>
+</nav>
+<button class="reserve-btn" id="reserve-btn" data-micromodal-trigger="modal-1" aria-controls="modal">宿泊予約</button>
+</div>
+</header>
+<main class="main-contents">
+<div class="page-header _menu">
+<h1 class="page-header__title">お料理</h1>
+</div>
+<nav class="breadcrumb mt-35" aria-label="パンくずナビゲーション">
+<ol class="breadcrumb__list">
+<li class="breadcrumb__item"><a href="/">トップ</a></li>
+<li class="breadcrumb__item"><a href="/menu/" aria-current="page">お料理</a></li>
+</ol>
+</nav>
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+<header class="modal__header">
+<h2 class="modal__title" id="modal-1-title">
+宿泊予約
+</h2>
+<button class="modal__close" aria-label="モーダルを閉じる" data-micromodal-close></button>
+</header>
+<div class="modal__content" id="modal-1-content">
+<form action="" method="post" class="form">
+<div class="contact">
+<label for="name" class="input-label">お名前</label>
+<div class="input-field">
+<input type="text" id="name" name="name" placeholder=" 例：石井正悟" required>
+</div>
+</div>
+<div class="contact">
+<label for="email" class="input-label">メールアドレス</label>
+<div class="input-field">
+<input type="text" id="email" name="email" placeholder=" 例：Example@example.com" required>
+</div>
+</div>
+<div class="contact">
+<label for="contact_type" class="input-label">ご希望プラン（空いているプランのみ表示されます）</label>
+<div class="input-field">
+<div class="select-wrap">
+<select name="contact_type" id="contact_type" required>
+<option value="" disabled="disabled" selected="selected">プランを選択してください</option>
+<option value="懐石プラン">【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+<option value="特別宿泊プラン">平日に優雅に楽しむ、特別宿泊プラン</option>
+<option value="ファミリープラン">絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+</select>
+</div>
+</div>
+</div>
+<div class="contact">
+<label for="calendar" class="input-label">日時選択</label>
+<div class="input-field">
+<input type="text" id="calendar" class="flatpickr-input" name="reservation" placeholder="日時を選択してください" readonly="readonly" required>
+</div>
+</div>
+<div class="form__btn">
+<button class="btn btn--action">送信する</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="page-lead" data-aos="fade-up">
+<p>地元熱海の市場で仕入れた食材のみをふんだんに使い、<br class="br-medium">
+大将の技が光る「熱海料理」<br>
+四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。</p>
+</div>
+<section class="section">
+<div class="media">
+<div class="media__body" data-aos="fade-up">
+<h2 class="media__title">地元食材にこだわった会席料理</h2>
+<div class="media__text">
+<p>みずみずしくほのかに甘い野菜、新鮮で味に深みがある魚介類、肉類。<br>
+旬の素材をそのままに生かす、経験に裏打ちされた確かな技。<br>
+四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。</p>
+</div>
+</div>
+<figure class="media__ph" data-aos="fade-up">
+<img src="../img/menu01@2x.jpg" alt="地元の食材をふんだんに取り入れた懐石料理の写真">
+</figure>
+</div>
+<div class="media _reverse">
+<div class="media__body" data-aos="fade-up">
+<h2 class="media__title">熱海の漁港で目利きの品を</h2>
+<div class="media__text">
+<p>石井花壇でお出しする料理はすべて料理長である大将の目利きで、<br class="br-large">
+熱海の魚市場でその日のうちに仕入れたものを使用しております。<br>
+日本海の宝玉を十分にお楽しみください。</p>
+</div>
+</div>
+<figure class="media__ph" data-aos="fade-up">
+<img src="../img/menu02@2x.jpg" alt="熱海の漁港で仕入れた食材の写真">
+</figure>
+</div>
+<div class="media">
+<div class="media__body" data-aos="fade-up">
+<h2 class="media__title">食材が一流、職人も一流</h2>
+<div class="media__text">
+<p>石井花壇の料理人は料亭で20年経験を積んだものばかり。<br>
+その時の最も旬な食材を、最高の調理でお届けします。<br>
+また、お料理への細かいご要望にもお答えできますので、<br class="br-large">お気軽にお申し付けください。</p>
+</div>
+</div>
+<figure class="media__ph" data-aos="fade-up">
+<img src="../img/menu03@2x.jpg" alt="熟練の料理人が旬の食材を使い、お寿司を握っている写真">
+</figure>
+</div>
+</section>
+</div>
+<div class="btn-bottom">
+<button class="sp-reserve-btn" id="sp-reserve-btn" data-micromodal-trigger="modal-1" aria-label="モーダルを開く" aria-controls="modal">宿泊予約</button>
+</div>
+</main>
+<footer class="footer">
+<ul class="fmenu">
+<li class="fmenu__item">
+<a href="../onsen/index.html" class="fmenu__link">温泉</a>
+</li>
+<li class="fmenu__item">
+<a href="../menu/index.html" class="fmenu__link">お料理</a>
+</li>
+<li class="fmenu__item">
+<a href="../room/index.html" class="fmenu__link">お部屋</a>
+</li>
+</ul>
+<div class="footer__logo">
+<a href="#"><img src="../img/footer-logo.svg" alt=" 石井花壇 | 温海温泉旅館" width="145" height="92"></a>
+</div>
+<address class="footer__ad-box">
+<div class="footer__adress">〒000-0000<span>山形県鶴岡市xxxxxxxxxxx</span></div>
+<div class="footer__tel">
+<p>TEL.000-0000-0000</p>
+<p>FAX.00-0000-0000</p>
+</div>
+</address>
+<div class="footer_copy">
+<p>Copyright &copy; 石井花壇 All Rights Reserved</p>
+</div>
+</footer>
+<script></script>
+</body></html>

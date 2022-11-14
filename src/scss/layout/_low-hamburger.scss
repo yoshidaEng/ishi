@@ -1,0 +1,68 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* 下層ページ ハンバーガーメニュー
+------------------------------------------------------ */
+.low-hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    transition: 0.3s;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 9999;
+    &:hover,
+    &:focus-visible {
+        opacity: 0.7;
+    }
+}
+
+.low-hamburger__line {
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background: v.$c_black;
+}
+
+.low-hamburger__line::before,
+.low-hamburger__line::after {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    transition: transform 0.3s;
+    background: v.$c_black;
+    content: "";
+}
+
+.low-hamburger__line::before {
+    top: -9px;
+}
+
+.low-hamburger__line::after {
+    bottom: -9px;
+}
+
+/*閉じる*/
+.low-hamburger[aria-expanded="true"] .low-hamburger__line{
+    background: transparent;
+}
+.low-hamburger[aria-expanded="true"] .low-hamburger__line::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.low-hamburger[aria-expanded="true"] .low-hamburger__line::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+@include m.small {
+    .low-hamburger {
+        display: none;
+    }
+}

@@ -1,0 +1,38 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* パンくずリスト
+------------------------------------------------------ */
+.breadcrumb {
+    max-width: v.$width;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 20px;
+    color: v.$c_black;
+    box-sizing: content-box;
+    a {
+        font-size: 12px;
+        text-decoration: none;
+    }
+}
+
+.breadcrumb__list {
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb__item {
+    display: inline;
+    &:not(:last-child){
+        &::after {
+        margin-right: 0.2em;
+        margin-left: 0.2em;
+        content: ">";
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
+

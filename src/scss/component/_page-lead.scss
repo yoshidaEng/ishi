@@ -1,0 +1,24 @@
+//読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* リード文
+------------------------------------------------------ */
+.page-lead {
+    font-size: clamp(12px, 1.4vw, 16px);
+    line-height: 2;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 73px;
+}
+
+@include m.small {
+    .page-lead {
+        text-align: center;
+    }
+}
+@include m.large {
+    .page-lead {
+        margin-top: 93px;
+    }
+}

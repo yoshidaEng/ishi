@@ -1,0 +1,14 @@
+//変数読み込み
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins"as m;
+
+/* Fontawesome
+------------------------------------------------------ */
+.fa-xmark {
+    display: none;
+    font-size: 2.2em;
+}
+
+.open .navbtn .fa-xmark {
+    display: block;
+}
